@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12">
+    <%= link_to "New patient", new_patient_path, class: "btn btn-primary float-right" %> 
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Physician Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.first_name %></td>
+            <td><%= patient.last_name %></td>
+            <td><%= patient.physician_name %></td>  
+            <td><%= link_to "Edit", edit_patient_path(patient) %> | <%= link_to "Activity Log", "#activityLog#{patient.id}", "data-toggle": "collapse" %></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <%= render partial: 'shared/activity_log', locals: { patient: patient } %>
+            </td>
+          </tr>
+      
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

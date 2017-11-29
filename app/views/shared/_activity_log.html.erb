@@ -1,0 +1,8 @@
+<div class="collapse" id="activityLog<%= patient.id %>">
+  <div class="card card-block">
+    <h5 class="card-title">Activity Log</h5>
+    <% patient.activity_logs.each do |log| %>
+      <div class="card-text"><%= log.changes_text %></div>
+    <% end %>
+  </div>
+</div>

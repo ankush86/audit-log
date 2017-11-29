@@ -1,0 +1,18 @@
+<%= form_for @patient do |f| %>
+  <div class="form-group">
+    <label>First Name</label>
+    <%= f.text_field :first_name, class: 'form-control', placeholder: 'Enter first name' %>    
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Enter last name' %> 
+  </div>
+  <div class="form-group">
+    <label>Physician Name</label>
+    <%= f.text_field :physician_name, class: 'form-control', placeholder: 'Enter physician name' %>
+  </div>
+  <div>
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to 'Back', patients_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
