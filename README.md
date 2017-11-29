@@ -7,6 +7,7 @@
 
 ### Run Application
 * rails s
+* access application on http://localhost:3000
 
 ### Run test cases
 * rspec 
